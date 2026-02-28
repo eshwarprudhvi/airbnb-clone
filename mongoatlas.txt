@@ -1,0 +1,6 @@
+qesTlVMEGP3RwWOt atlas password 
+username :frequency2k5
+
+
+link:
+mongodb+srv://frequency2k5:qesTlVMEGP3RwWOt@cluster0.xycwys6.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
