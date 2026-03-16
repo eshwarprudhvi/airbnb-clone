@@ -51,20 +51,20 @@ app.get("/",(req,res)=>{
 const store = MongoStore.create({
     mongoUrl: dbUrl,
     crypto: {
-        secret: "mysupersecret"
+        secret: process.env.SECRET 
     },
     touchAfter: 24 * 3600
 })
 
 const sessionOptions = {
     store:store,
-    secret:"mysupersecret",
+    secret: process.env.SECRET || "mysupersecret",
     resave:false,
     saveUninitialized:true,
     cookie:{
         expires:Date.now()+ 7*24*60*60*1000,
         maxAge:7*24*60*60*1000,
-        httpOnly:true, //security purposes cross scripting attacks
+        httpOnly:true,
 
     }
 }
@@ -118,6 +118,7 @@ app.use((err,req,res,next)=>{
     // res.status(statusCode).send(message);   
 })
 
-app.listen(8080,()=>{
-    console.log("app is listening on the port 8080");
+const port = process.env.PORT || 8080;
+app.listen(port,()=>{
+    console.log(`app is listening on the port ${port}`);
 })
