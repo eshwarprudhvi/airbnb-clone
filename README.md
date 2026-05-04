@@ -89,4 +89,5 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 
 
-*Developed by [Eshwar Prudhvi](https://github.com/eshwarprudhvi)*
+*Developed by [Prudhvishwar
+](https://github.com/eshwarprudhvi)*
