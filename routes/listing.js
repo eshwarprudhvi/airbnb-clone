@@ -10,7 +10,7 @@ const upload = multer({storage});
 const ExpressError = require("../utils/ExpressError.js");
 const {listingSchema} = require("../schema.js");
 const Listing = require("../Models/listing");
-const {isLoggedIn, isOwner,validateListing} = require("../middlware.js");
+const {isLoggedIn, isOwner,validateListing} = require("../middleware.js");
 
 const listingController = require("../controllers/listings.js");
 

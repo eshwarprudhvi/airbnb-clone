@@ -1,6 +1,4 @@
-if(process.env.NODE_ENV!="production"){
-    require("dotenv").config();
-}
+require("dotenv").config();
 
 
 const express  = require("express");
@@ -68,7 +66,7 @@ const sessionOptions = {
 
     }
 }
-store.on("error",()=>{
+store.on("error",(err)=>{
     console.log("Error in Mongo session store",err);
 })
 //session
@@ -105,7 +103,7 @@ app.use("/listings", listingRouter);
 app.use("/",userRouter);
 
 
-app.all(/(.*)/,(req,res,next)=>{
+app.all("*",(req,res,next)=>{
     next(new ExpressError(404,"page not found")); 
 });
 

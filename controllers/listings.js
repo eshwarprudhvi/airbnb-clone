@@ -26,8 +26,12 @@ module.exports.showListing =async (req, res) => {
 }
 
 module.exports.createListing = async (req,res)=>{
-    let url = req.file.path;
-    let filename = req.file.filename;
+    let url = "https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80";
+    let filename = "listingimage";
+    if(typeof req.file !== "undefined"){
+        url = req.file.path;
+        filename = req.file.filename;
+    }
     console.log(url, "..", filename);
 
     const newListing = new Listing(req.body.listing);
